@@ -6,11 +6,20 @@
     <LangVersion>preview</LangVersion>
   </PropertyGroup>
 
+
+  <PropertyGroup>
+    <RestoreAdditionalProjectSources>https://pkgs.dev.azure.com/dnceng/public/_packaging/dotnet5/nuget/v3/index.json ;$(RestoreAdditionalProjectSources)</RestoreAdditionalProjectSources>
+  </PropertyGroup>
+
   <ItemGroup>
     <AdditionalFiles Include="MainSettings.xmlsettings" />
     <None Include="MainSettings.xmlsettings">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Net.Compilers.Toolset" Version="3.7.0-1.20220.1" PrivateAssets="all" />
   </ItemGroup>
 
   <ItemGroup>
